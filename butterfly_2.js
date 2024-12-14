@@ -7,8 +7,8 @@ let RENDERER = {
     // Dừng hiệu ứng sau 20 giây
     setTimeout(() => {
       cancelAnimationFrame(this.animationId);
-      console.log("Hiệu ứng đã dừng sau 30 giây.");
-    }, 30000);
+      console.log("Hiệu ứng đã dừng sau 50 giây.");
+    }, 50000);
   },
   setParameters: function () {
     this.$container = $("#jsi-butterfly-container");

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gửi Khánh Băng</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background: url('galaxy.jpg') no-repeat center center fixed;
+            background-size: cover;
+            color: black;
+            text-align: center;
+        }
+        #message {
+            font-size: 1.5em;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="message"></div>
+
+    <script>
+        const text = `
+        Gửi Khánh Băng (Vợ iu Cha Eun Woo)
+
+        Chúc cậu mỗi ngày đều là một ngày tràn đầy niềm vui, hạnh phúc và những khoảnh khắc đáng nhớ. 
+        Cậu giống như một bông hoa xinh đẹp giữa đời, tỏa sắc hương dịu dàng khiến ai ở gần cũng thấy nhẹ nhàng, thư thái. 
+        Hãy luôn giữ vững nụ cười thật tươi trên môi, bởi nó không chỉ là điểm nhấn xinh đẹp mà còn là nguồn năng lượng tích cực cho mọi người xung quanh.
+
+        Chúc cậu luôn khỏe mạnh, tràn đầy năng lượng, thành công trong học tập, công việc và cả những điều nhỏ bé mà cậu trân quý. 
+        Hãy luôn tự tin và hạnh phúc nhé!
+        `;
+        
+        const messageElement = document.getElementById('message');
+        let index = 0;
+
+        function changeColor() {
+            const colors = ['#FFFFFF'];
+            return colors[Math.floor(Math.random() * colors.length)];
+        }
+
+        function typeEffect() {
+            if (index < text.length) {
+                const char = text[index];
+                const span = document.createElement('span');
+                span.textContent = char;
+                span.style.color = changeColor();
+                messageElement.appendChild(span);
+                index++;
+                setTimeout(typeEffect, 50);
+            }
+        }
+
+        typeEffect();
+    </script>
+
+</body>
+</html>
